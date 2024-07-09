@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import date
-from application.people import get_worker, set_worker
-from application.salary import get_salary, set_salary
+from application.people import get_employees, set_employee
+from application.salary import calculate_salary, set_salary
 
 
 def do_something_with_pd():
@@ -14,8 +14,10 @@ def do_something_with_pd():
 
 if __name__ == '__main__':
     print(f"Дата сегодня: {date.today()}")
-    print(f"Получаем работника: {get_worker(1)}")
-    print(f"Загружаем работника: {set_worker(2, 'Леонид Якубович')}")
-    print(f"Получаем зп: {get_salary(4)}")
+    print(f"Получаем работника: {get_employees(1)}")
+    print(f"Получаем всех работников: {get_employees()}")
+    print(f"Загружаем работника: {set_employee(2, 'Леонид Якубович')}")
+    print(f"Получаем расчет по зп: {calculate_salary(4)}")
     print(f"Устанавливаем зп: {set_salary(5)}")
     print(f"Получаем измененный датафрейм: {do_something_with_pd()}")
+    
